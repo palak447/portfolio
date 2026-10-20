@@ -59,7 +59,7 @@ export const projects = [
     description:
       'Matches resumes with relevant job roles using machine learning. Skill-based filtering and keyword matching improve relevance, with job-trend insights to add context.',
     technologies: ['Python', 'Machine Learning'],
-    github: 'TODO_FRESH_HIRED_GITHUB_URL',
+    github: 'https://github.com/palak447/FreshHired.git',
     demo: 'TODO_FRESH_HIRED_LIVE_URL',
   },
   {
@@ -70,19 +70,8 @@ export const projects = [
     description:
       'Predicts loan defaulters on peer-to-peer lending data, addressing class imbalance with precision, recall and F1 evaluation, feature engineering and model tuning.',
     technologies: ['Python', 'Machine Learning'],
-    github: 'TODO_LOAN_PREDICTION_GITHUB_URL',
+    github: 'https://github.com/likhithabhupathi2006-alt/Loan-Default-Prediction',
     demo: 'TODO_LOAN_PREDICTION_LIVE_URL',
-  },
-  {
-    number: '03',
-    name: 'Women Empowerment Index',
-    category: 'Data analysis · 2013–2023',
-    preview: 'empowerment',
-    description:
-      'Explores 12 countries through statistical and time-series analysis, normalization and correlation to surface regional patterns in women’s empowerment.',
-    technologies: ['Data Analysis', 'Statistics'],
-    github: 'TODO_EMPOWERMENT_ANALYSIS_GITHUB_URL',
-    demo: 'TODO_EMPOWERMENT_ANALYSIS_LIVE_URL',
   },
   {
     number: '04',
@@ -97,15 +86,26 @@ export const projects = [
   },
 ];
 
-export const internship = {
-  organization: 'Zidio Development',
-  field: 'Data Analytics',
-  duration: '3 months',
-  description:
-    'Worked on data analytics tasks and practical projects to develop skills in data analysis, data visualization, and extracting meaningful insights from data.',
-  skills: ['Python', 'Pandas', 'NumPy', 'Data Analysis', 'Data Visualization'],
-  certificateUrl: '/Zidio-Internship-Completion-Certificate-ZID-V-AB1F0C339E57.pdf',
-};
+export const internships = [
+  {
+    organization: 'Zidio Development',
+    field: 'Data Analytics',
+    duration: '3 months',
+    description:
+      'Worked on data analytics tasks and practical projects to develop skills in data analysis, data visualization, and extracting meaningful insights from data.',
+    skills: ['Python', 'Pandas', 'NumPy', 'Data Analysis', 'Data Visualization'],
+    certificateUrl: '/Zidio-Internship-Completion-Certificate-ZID-V-AB1F0C339E57.pdf',
+  },
+  {
+    organization: 'Codec Technologies',
+    field: 'Artificial Intelligence',
+    duration: '3 months',
+    description:
+      'Completed an Artificial Intelligence Training Program, gaining valuable knowledge and practical skills in AI concepts and techniques. Strengthened my understanding of artificial intelligence and its applications through structured training.',
+    skills: ['Artificial Intelligence', 'Python', 'Machine Learning'],
+    certificateUrl: '/Codec-Technologies-AI-Training-Certificate.pdf',
+  },
+];
 
 export const milestones = [
   {

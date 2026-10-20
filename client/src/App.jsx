@@ -20,7 +20,7 @@ import {
   FiSun,
   FiX,
 } from 'react-icons/fi';
-import { activities, certifications, internship, milestones, profile, projects, skillGroups, softSkills, socialLinks } from './data.js';
+import { activities, certifications, internships, milestones, profile, projects, skillGroups, softSkills, socialLinks } from './data.js';
 
 const API_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 const sectionIds = ['about', 'skills', 'work', 'internships', 'journey', 'recognition', 'contact'];
@@ -284,34 +284,40 @@ function Internships() {
   return (
     <section id="internships" className="section wrap internships-section">
       <div className="projects-heading"><span aria-hidden="true">🚀</span><h2>Internships</h2></div>
-      <motion.article className="internship-card glass-card" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <div className="internship-preview" aria-hidden="true">
-          <div className="internship-preview-top"><span>ZIDIO DEVELOPMENT</span><span>INTERNSHIP / DATA ANALYTICS</span></div>
-          <div className="internship-preview-main">
-            <div className="internship-preview-copy"><span>INSIGHT STARTS WITH DATA</span><i /><i /><i /></div>
-            <div className="internship-preview-chart"><i /><i /><i /><i /><i /><i /><i /></div>
-          </div>
-          <div className="internship-preview-bottom"><span>PYTHON</span><span>PANDAS</span><span>VISUALIZATION</span></div>
-        </div>
-        <div className="internship-card-body">
-          <h3>{internship.organization}</h3>
-          <p><strong>Field:</strong> {internship.field}</p>
-          <p><strong>Duration:</strong> {internship.duration}</p>
-          <p className="internship-description">{internship.description}</p>
-          <div className="tech-badges" aria-label="Internship skills">
-            {internship.skills.map((skill) => <span key={skill}>{skill}</span>)}
-          </div>
-          {internship.certificateUrl ? (
-            <a className="project-code internship-certificate" href={internship.certificateUrl} target="_blank" rel="noreferrer">
-              <FiAward /> Certificate Link <FiArrowUpRight />
-            </a>
-          ) : (
-            <span className="project-code internship-certificate internship-certificate-unavailable" aria-disabled="true" title="Add the certificate URL in the internship details to enable this link">
-              <FiAward /> Certificate link not provided
-            </span>
-          )}
-        </div>
-      </motion.article>
+      <div className="internships-grid">
+        {internships.map((internship) => (
+          <motion.article key={internship.organization} className="internship-card glass-card" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+            <div className="internship-preview" aria-hidden="true">
+              <div className="internship-preview-top"><span>{internship.organization.toUpperCase()}</span><span>INTERNSHIP / {internship.field.toUpperCase()}</span></div>
+              <div className="internship-preview-main">
+                <div className="internship-preview-copy"><span>BUILDING SKILLS IN {internship.field.toUpperCase()}</span><i /><i /><i /></div>
+                <div className="internship-preview-chart"><i /><i /><i /><i /><i /><i /><i /></div>
+              </div>
+              <div className="internship-preview-bottom">
+                {internship.skills.slice(0, 3).map((skill) => <span key={skill}>{skill.toUpperCase()}</span>)}
+              </div>
+            </div>
+            <div className="internship-card-body">
+              <h3>{internship.organization}</h3>
+              <p><strong>Field:</strong> {internship.field}</p>
+              <p><strong>Duration:</strong> {internship.duration}</p>
+              <p className="internship-description">{internship.description}</p>
+              <div className="tech-badges" aria-label="Internship skills">
+                {internship.skills.map((skill) => <span key={skill}>{skill}</span>)}
+              </div>
+              {internship.certificateUrl ? (
+                <a className="project-code internship-certificate" href={internship.certificateUrl} target="_blank" rel="noreferrer">
+                  <FiAward /> Certificate Link <FiArrowUpRight />
+                </a>
+              ) : (
+                <span className="project-code internship-certificate internship-certificate-unavailable" aria-disabled="true" title="Add the certificate URL in the internship details to enable this link">
+                  <FiAward /> Certificate link not provided
+                </span>
+              )}
+            </div>
+          </motion.article>
+        ))}
+      </div>
     </section>
   );
 }
