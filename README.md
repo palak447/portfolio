@@ -2,8 +2,8 @@
 
 A responsive, dark-first personal portfolio for Palak Srivastava, an aspiring AI and data analyst. It includes an animated React experience, static project and profile content, an Express/Mongoose contact API, and PDF/DOCX CV download endpoints.
 
-**Live portfolio:** `TODO_PORTFOLIO_LIVE_URL`  
-**API deployment:** `TODO_API_LIVE_URL`
+**Live portfolio:** https://portfolio-palak-52ab.vercel.app/
+**API deployment:** https://portfolio-rzvj.onrender.com
 
 ## Stack
 
